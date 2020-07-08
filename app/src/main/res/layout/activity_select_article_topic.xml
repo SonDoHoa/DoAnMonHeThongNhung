@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="12"
+    tools:context=".SelectArticleTopic"
+    android:background="@color/colorPrimaryDark">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="1"
+        app:titleTextColor="#fff"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:background="#EA000000"
+        android:theme="@style/ToolbarTheme"
+        app:popupTheme="@style/Theme.AppCompat.Light"/>
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center_vertical"
+        android:text="Chon it nhat 3 chu de ban muon theo doi de chung toi co the giup ban ca nhan hoa trai nghiem tren TinTuc24h"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:id="@+id/cardViewTopic"
+        android:layout_weight="7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewThoiSu"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTheGioi"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTheThao"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewGiaoDuc"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewGiaiTri"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewKinhDoanh"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewDuLich"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPhapLuat"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSucKhoe"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewCongNghe"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewKhoaHoc"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewXe"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="8dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:text="Chon cac topic"
+            android:background="@color/colorAccent"/>
+    </LinearLayout>
+</LinearLayout>
