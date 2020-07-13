@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,6 +41,10 @@ import java.util.regex.Pattern;
  */
 public class HealthFragment extends Fragment {
 
+    private RecyclerView mRecyclerView;
+    private ArrayList<itemArticleModel> itemArticleModelArrayList;
+    SwipeRefreshLayout mSwipeRefreshLayoutHealth;
+
     public HealthFragment() {
         // Required empty public constructor
     }
@@ -53,12 +58,19 @@ public class HealthFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_health, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerViewHealth);
 
+        mSwipeRefreshLayoutHealth = view.findViewById(R.id.swipeRefreshHealth);
+
         new ReadRss().execute("https://vnexpress.net/rss/suc-khoe.rss");
+
+        mSwipeRefreshLayoutHealth.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(getContext(), "Reload RSS", Toast.LENGTH_SHORT).show();
+                mSwipeRefreshLayoutHealth.setRefreshing(false);
+            }
+        });
         return view;
     }
-
-    private RecyclerView mRecyclerView;
-    private ArrayList<itemArticleModel> itemArticleModelArrayList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -39,11 +39,12 @@ import java.util.regex.Pattern;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SportFragment extends Fragment {
+public class SportFragment extends Fragment{
 
     private RecyclerView mRecyclerView;
     private ArrayList<itemArticleModel> itemArticleModelArrayList;
     SwipeRefreshLayout swipeRefreshLayout;
+    ReadRss mReadRss;
 
     public SportFragment() {
         // Required empty public constructor
@@ -65,7 +66,27 @@ public class SportFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sport, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerViewSport);
 
-        new ReadRss().execute("https://vnexpress.net/rss/the-thao.rss");
+        mReadRss = (ReadRss) new ReadRss().execute("https://vnexpress.net/rss/the-thao.rss");
+//        SportFragment sportFragment = new SportFragment();
+//        mReadRss.setFragment(sportFragment);
+//        for (int i=0; i<mReadRss.modelArrayList.size(); i++){
+//            itemArticleModelArrayList = mReadRss.modelArrayList.get(i);
+//        }
+//        itemArticleModelArrayList.addAll((Collection<? extends itemArticleModel>) getArguments().<Parcelable>getParcelableArrayList("array"));
+
+//        Log.e("size of array list", String.valueOf(mReadRss.getModelArrayList().size()));
+//        mReadRss.setmContext(getContext());
+//        ItemArticleAdapter recyclerviewAdapter = new ItemArticleAdapter(getContext(), itemArticleModelArrayList);
+//        recyclerviewAdapter.setOnItemClickListener(new ItemArticleAdapter.ClickListener() {
+//            @Override
+//            public void onItemClick(int position, View v) {
+//                Intent intent = new Intent(getContext(), ReadArticleView.class);
+//                intent.putExtra("link", itemArticleModelArrayList.get(position).link);
+//                startActivity(intent);
+//            }
+//        });
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        mRecyclerView.setAdapter(recyclerviewAdapter);
 
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshSport);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

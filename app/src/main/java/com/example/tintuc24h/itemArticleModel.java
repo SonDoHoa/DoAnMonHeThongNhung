@@ -1,6 +1,10 @@
 package com.example.tintuc24h;
 
-public class itemArticleModel {
+import android.os.Parcelable;
+
+import java.util.ArrayList;
+
+public class itemArticleModel extends ArrayList<itemArticleModel> {
     public String title, nameArticle, time;
     public String image;
     public String link;

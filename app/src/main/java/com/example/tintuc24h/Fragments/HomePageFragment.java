@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +43,7 @@ public class HomePageFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private ArrayList<itemArticleModel> itemArticleModelArrayList;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     public HomePageFragment() {
         // Required empty public constructor
@@ -65,20 +67,15 @@ public class HomePageFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.recyclerView);
 
         new ReadRss().execute("https://vnexpress.net/rss/tin-moi-nhat.rss");
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ItemArticleAdapter recyclerviewAdapter = new ItemArticleAdapter(getContext(), itemArticleModelArrayList);
-        mRecyclerView.setAdapter(recyclerviewAdapter);
-        recyclerviewAdapter.setOnItemClickListener(new ItemArticleAdapter.ClickListener() {
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void onItemClick(int position, View v) {
-                Intent intent = new Intent(getContext(), ReadArticleView.class);
-                intent.putExtra("link", itemArticleModelArrayList.get(position).link);
-                startActivity(intent);
+            public void onRefresh() {
+                new ReadRss().execute("https://vnexpress.net/rss/tin-moi-nhat.rss");
+                Toast.makeText(getContext(), "Reload RSS", Toast.LENGTH_SHORT).show();
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
-
-
         return view;
     }
 
@@ -129,7 +126,18 @@ public class HomePageFragment extends Fragment {
                     nameArticle = nodeListdescription.item(0).getTextContent().replaceAll("RSS", "");
                     itemArticleModelArrayList.add(new itemArticleModel(title, image, nameArticle, pubDate, link));
                 }
+                ItemArticleAdapter recyclerviewAdapter = new ItemArticleAdapter(getContext(), itemArticleModelArrayList);
 
+                recyclerviewAdapter.setOnItemClickListener(new ItemArticleAdapter.ClickListener() {
+                    @Override
+                    public void onItemClick(int position, View v) {
+                        Intent intent = new Intent(getContext(), ReadArticleView.class);
+                        intent.putExtra("link", itemArticleModelArrayList.get(position).link);
+                        startActivity(intent);
+                    }
+                });
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                mRecyclerView.setAdapter(recyclerviewAdapter);
 
             } else {
                 Toast.makeText(getContext(), "gia tri cua s bi null", Toast.LENGTH_SHORT).show();
