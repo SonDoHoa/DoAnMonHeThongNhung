@@ -41,11 +41,11 @@
         android:rowCount="3"
         android:columnOrderPreserved="false"
         android:layout_gravity="center"
-        >
+        android:layout_weight="8">
         <androidx.cardview.widget.CardView
             android:id="@+id/cvThoiSu"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="Thoi su"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -68,8 +68,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvTheGioi"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:text="The gioi"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -92,8 +92,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvTheThao"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:text="The thao"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -116,8 +116,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvGiaoDuc"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="Giao duc"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -140,8 +140,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvGiaiTri"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -152,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:text="Giai tri"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -164,8 +164,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvKinhDoanh"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:text="Kinh doanh"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -188,8 +188,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvPhapLuat"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:text="Phap luat"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -212,8 +212,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvSucKhoe"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -224,7 +224,7 @@
                 android:layout_height="wrap_content"
                 android:text="Suc khoe"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -236,8 +236,8 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvCongNghe"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -248,7 +248,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cong nghe"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="bottom|center"/>
             <ImageView
@@ -271,6 +271,7 @@
             android:layout_height="45dp"
             android:layout_margin="20dp"
             android:text="Chon chu de"
+            android:textSize="23sp"
             android:background="@color/colorAccent"/>
     </LinearLayout>
 </LinearLayout>

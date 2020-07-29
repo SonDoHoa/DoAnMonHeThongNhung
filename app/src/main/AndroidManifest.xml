@@ -13,12 +13,10 @@
         android:theme="@style/AppTheme"
         android:hardwareAccelerated="false"
         android:largeHeap="true">
-        <activity android:name=".SelectArticleTopic"
-            android:parentActivityName=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".ReadArticleView"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".SelectArticleTopic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

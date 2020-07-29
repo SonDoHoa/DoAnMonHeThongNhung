@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.tintuc24h.TopicArticleModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
     private final List<Fragment> fragmentList = new ArrayList<>();
     private final List<String> titleList = new ArrayList<>();
+//    private final List<TopicArticleModel> models = new ArrayList<>();
 
     public PagerAdapter (FragmentManager fm){
         super(fm);
@@ -36,8 +39,8 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         return titleList.get(position);
     }
 
-    public void AddFragment(Fragment fragment, String title){
-        fragmentList.add(fragment);
-        titleList.add(title);
+        public void AddFragment(Fragment fragment, String title){
+            fragmentList.add(fragment);
+            titleList.add(title);
     }
 }
